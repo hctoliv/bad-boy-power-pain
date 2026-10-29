@@ -8,7 +8,9 @@ let finalVisible = false;
 const onScroll = () => {
   const y = window.scrollY;
   nav.classList.toggle('is-solid', y > 40);
-  buybar.classList.toggle('is-on', y > hero.offsetHeight * .8 && !finalVisible);
+  const buyOn = y > hero.offsetHeight * .8 && !finalVisible;
+  buybar.classList.toggle('is-on', buyOn);
+  document.body.classList.toggle('buybar-on', buyOn);
 };
 window.addEventListener('scroll', onScroll, { passive: true });
 
